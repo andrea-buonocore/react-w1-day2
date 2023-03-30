@@ -1,8 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-
-const MyNav = function() {
+const MyNav = function () {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container fluid>
@@ -16,7 +15,7 @@ const MyNav = function() {
           </Nav>
         </Navbar.Collapse>
       </Container>
-    </Navbar>
+    </Navbar >
   );
 }
 

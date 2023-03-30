@@ -14,7 +14,7 @@ const AllTheBooks = () => {
     return (
         <Container className='allTheBooksContainer'>
 
-            <Accordion defaultActiveKey="0" className='my-3'>
+            <Accordion className='my-3'>
                 <Accordion.Item eventKey="0">
                     <Accordion.Header>Film Fantasy</Accordion.Header>
                     <Accordion.Body>
@@ -46,7 +46,7 @@ const AllTheBooks = () => {
                 </Accordion.Item>
             </Accordion>
 
-            <Accordion defaultActiveKey="0" className='my-3'>
+            <Accordion className='my-3'>
                 <Accordion.Item eventKey="0">
                     <Accordion.Header>Film History</Accordion.Header>
                     <Accordion.Body>
