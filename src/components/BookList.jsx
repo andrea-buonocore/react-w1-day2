@@ -19,24 +19,23 @@ class BookList extends Component {
 
     findBooks = () => {
 
-        this.props.horrorB.map(book => {
-            return (
-                book.title.toLowerCase().includes(this.state.search.toLowerCase()) && (
-                    this.setState({
-                        
-                        
-                        filteredBooks: [...this.state.filteredBooks, book],
-                    })
-                )
-            )
+        this.setState({
+            filteredBooks: this.props.horrorB.filter(book => {
+    
+                return book.title.toLowerCase().includes(this.state.search.toLowerCase())
+    
+            })
+
         })
+        
+
+        
+
     }
 
     render() {
-
         return (
             <Container>
-
                 <h2 className="my-3">BookList + Single Book</h2>
                 <Accordion className='my-3'>
                     <Accordion.Item eventKey="0">
@@ -49,9 +48,7 @@ class BookList extends Component {
                                     console.log('funziona!');
                                     
                                     this.findBooks();
-
                                 }}
-
                             >
                                 <Form.Control
                                     type="text"
@@ -61,7 +58,7 @@ class BookList extends Component {
                                     value={this.state.search}
                                     onChange={(e) => {
                                         this.setState({
-                                            ...this.state,
+                                            
                                             search: e.target.value
                                         })
                                     }
@@ -70,22 +67,18 @@ class BookList extends Component {
                                 <Button type="submit" variant="outline-success">Search</Button>
                             </Form>
                             <Row xs={1} md={3} lg={5}>
-
                                 {
                                     this.state.filteredBooks.map(book => {
                                         return (
-                                            <SingleBook libro={book} />
+                                            <SingleBook key = {book.asin} libro={book} />
                                         )
                                     })
                                 }
-
                             </Row>
-
                         </Accordion.Body>
                     </Accordion.Item>
                 </Accordion>
             </Container>
-
         )
     }
 }
