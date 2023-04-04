@@ -36,7 +36,7 @@ const CommentArea = (props) => {
         console.log('sono useEffect / componentDidMount');
         showReviews();
     },[]); 
-
+    
     
     return (
         <>
